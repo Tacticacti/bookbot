@@ -1,8 +1,11 @@
 from stats import count_words, get_book_text, count_characters, dict_to_sorted_list
+import sys
 
 def main(): 
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+    file = sys.argv[1]
     print("============ BOOKBOT ============")
-    file = "books/frankenstein.txt"
     print(f"Analyzing book found at {file}...")
     text = get_book_text(file)
     print("----------- Word Count ----------")
